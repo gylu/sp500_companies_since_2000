@@ -25,7 +25,8 @@ from bs4 import BeautifulSoup
 
 WIKIPEDIA_URL = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
 START_DATE = date(2000, 1, 1)
-OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 _HEADERS = {
     "User-Agent": (
